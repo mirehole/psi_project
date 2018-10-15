@@ -1,3 +1,1 @@
-ssh
-# NO
-# psi_project
+@ia yra git'as 
