@@ -1,0 +1,84 @@
+% Kompiuterijos katedros šablonas
+% Template of Department of Computer Science II
+% Versija 1.0 2015 m. kovas [ March, 2015]
+
+\documentclass[a4paper,12pt,fleqn]{article}
+\input{allPacks}
+
+\newtoggle{inLithuanian}
+ %If the report is in Lithuanian, it is set to true; otherwise, change to false
+\settoggle{inLithuanian}{false}
+
+%create file preface.tex for the preface text
+%if preface is needed set to true
+\newtoggle{needPreface}
+\settoggle{needPreface}{false}
+
+\newtoggle{signaturesOnTitlePage}
+\settoggle{signaturesOnTitlePage}{false}
+
+\input{macros}
+
+\begin{document}
+ % #1 -report type, #2 - title, #3-7 students,
+ \depttitlepage{Software engineering project}{Degantisvaskas}{Domantas Nėjus, - Leader}{Mindaugas Zinkevičius,}{Eimantas Rimkus,}{Lukas Drobelis,}{Audrius Miškinis,}{Arijus Uleckas}% students 2-5
+
+\tableofcontents
+
+
+ %the main part
+\newpage
+\section{System description}
+\label{sec:motivation}
+\subsection{Name}
+\label{sec:example}
+Name of the system: Website, called degantisvaskas.lt
+\subsection{Purpose}
+\label{sec:example}
+Purpose of this system is to provide easier time for customers to purchase candles for any occasion.
+\subsection{Description}
+\label{sec:example}
+Our team “DegantisVaskas” is full of youthful people with tons of great ideas and potential. Right now, we’re set on dominating the online Lithuanian candle-shopping business. We believe that every client is just as important as the other one and will do our best to suit your needs. Our philosophy is that fast and comfortable service is a must for a business and we will try our hardest to assure that. We’re the most reliable candle business in Lithuania. You will find the friendliest managers, determined to do their best to help you decide on what you want to buy.
+\subsection{Requirements}
+\label{sec:example}
+\begin{description}[font=$\bullet$~\normalfont\scshape\color{red!50!black}]
+\item [MySQL] 
+\item [Apache] 
+\item [HTML]
+\item [PHP]
+\item [CSS]
+\end{description}
+\subsection{Functionality/Customers perspective}
+\label{sec:example}
+After entering website degantisvaskas.lt the first thing you can see is Home page with information about our new products and sales we have. In the top right corner you can see a bar with options of different services to choose from. Starting with the HOME button(self explanatory), SHOP where you can choose sub categories of our products such as Grave candles, Birthday candles, Scented candles and so on, CONTACTS where you can see our contacts such as emails, phone numbers, FAQ where you can check frequently asked questions, REVIEWS where you can look up how people that have already bought our production reviewed our services. In addition, our website will be providing our customers with a SEARCH bar where you could look up things you are searching for. SHOPPING CART is another feature we will provide and it will work in a way where you choose items you want to buy and after you decide to Checkout you will be given a few options to choose your payment method plus shipping and delivery service details. Our website will provide you with the option to create new User. Users will be granted bonuses for purchasing our production and will be able to spend them on other items or discounts.
+\subsection{Environment}
+\label{sec:example}
+Project will be made in Linux environment.
+\subsection{Prototype of homepage}
+\label{sec:example}
+\includegraphics[width=15cm]{pic}
+
+\newpage
+\section{System specification}
+\label{sec:Acting actors and objects}
+
+% Please add the following required packages to your document preamble:
+%\usepackage{graphicx}
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|c|}
+\hline
+Actors           & Objects                                                        & Attributes                                                   & Functions                                                                                                                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
+Guest            & Candles                                                        & \begin{tabular}[c]{@{}c@{}}REG\\ CAR\\ ORD\end{tabular}      & \begin{tabular}[c]{@{}c@{}}REG: After entering the website, user has the option to create an account giving his/her username and password as input.\\ ORD: After entering the website, user can go to the "products" section where he can choose different products from our catalogue.\\ CAR: All of the chosen products will be placed in the shopping cart. A user can go to the shopping cart at any time and complete the purchase via bank transfer.\end{tabular}          \\ \hline
+Registered users & \begin{tabular}[c]{@{}c@{}}Candles\\ User account\end{tabular} & \begin{tabular}[c]{@{}c@{}}CAR\\ ORD\\ DIS\end{tabular}      & \begin{tabular}[c]{@{}c@{}}ORD: After entering the website, user can go to the "products" section where he can choose different products from our catalogue.\\ CAR: All of the chosen products will be placed in the shopping cart. A user can go to the shopping cart at any time and complete the purchase via bank transfer.\\ DIS: Whenever a registered user buys a product, a percentage of those products price will be tranfered back into account balance.\end{tabular} \\ \hline
+Admin       & \begin{tabular}[c]{@{}c@{}}Database\\ System code\end{tabular} & \begin{tabular}[c]{@{}c@{}}ACC\_MAG\\ ITEM\_MAG\end{tabular} & \begin{tabular}[c]{@{}c@{}}ACC\_MAG: Ability to alter registered users information in the database.\\ ITEM\_MAG: Ability to alter products information in the database.\end{tabular}                                                                                                                                                                                                                                                                                             \\ \hline
+\end{tabular}%
+}
+\end{table}
+ %Conclusions section
+\sectionWithoutNumber{\keyWordConclusions}{conclu}
+\input{conclusions.tex}
+
+\end{document}
